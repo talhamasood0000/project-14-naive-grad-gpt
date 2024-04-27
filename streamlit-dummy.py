@@ -42,6 +42,7 @@ def main():
     with st.sidebar:
         st.write("Health: ", st.session_state.hp)
         st.write("Damage Received: ", st.session_state.damage)
+        st.image('/Users/tariqmehmood/Downloads/cat_with_a_hat.png', caption='image')
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -91,6 +92,11 @@ def main():
             else:
                 st.warning("Something went wrong!")
                 st.stop()
+        prompt = st.chat_input("Welcome, stranger! Need more info on the story, eh? What's got you curious this time?")
+
+        if prompt:
+            st.write(f"User has sent the following prompt: {prompt}")
+
     else:
         finish()
 
