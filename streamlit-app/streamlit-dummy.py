@@ -2,7 +2,7 @@ import streamlit as st
 
 def intro_page():
     # Hide Sidebar
-    st.set_page_config(initial_sidebar_state="collapsed")
+    st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
     st.markdown(
         """
         <style>
