@@ -6,8 +6,8 @@ from PIL import Image
 from io import BytesIO
 from openai import OpenAI
 
-URL = "https://c2ca-34-83-116-245.ngrok-free.app//generate"
-client = OpenAI(api_key="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")
+URL = "https://d07c-35-204-102-30.ngrok-free.app/generate"
+client = OpenAI(api_key="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")
 
 def get_response(story=None, initial=False, rag_query=None):
     if URL:
@@ -198,7 +198,10 @@ def start_game():
 
     # Create Initial Scenario
     st.write(story)
-    st.image(image, width=512)
+    _, cent_co, _ = st.columns(3)
+    with cent_co:
+        st.image(image, width=512)
+        
     for option in options:
         if st.button(option, key=option, on_click=lambda option=option: handle_option_click(option, options, damage, outcome)):
             temp = st.empty()
